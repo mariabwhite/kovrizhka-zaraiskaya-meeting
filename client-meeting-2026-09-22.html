@@ -11,14 +11,9 @@
 :root{
   --cream:#F3E8D4;
   --cream-2:#E8DBC0;
-  --navy:#2456A6;
-  --navy-2:#1A3F80;
   --ink:#172A3A;
   --wine:#5A2147;
-  --terracotta:#C45F2D;
-  --olive:#087A68;
   --line:rgba(23,42,58,.14);
-  --line-2:rgba(23,42,58,.28);
   --display:'Cormorant Garamond', Georgia, serif;
   --body:'Manrope', -apple-system, sans-serif;
 }
@@ -35,7 +30,6 @@ body{
 img{ display:block; width:100%; height:auto; }
 .wrap{ max-width:1200px; margin:0 auto; padding:0 32px; }
 
-/* Верхняя панель */
 .topbar{
   position:sticky; top:0; z-index:50;
   background:rgba(243,232,212,.92); backdrop-filter:blur(10px);
@@ -50,9 +44,8 @@ img{ display:block; width:100%; height:auto; }
   font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
   color:var(--wine); text-decoration:none; white-space:nowrap; padding:6px 0;
 }
-.topbar nav a:hover{ color:var(--navy); }
+.topbar nav a:hover{ color:var(--ink); }
 
-/* Секции */
 .section{ padding:70px 0; border-top:1px solid var(--line); }
 .section:first-of-type{ border-top:none; }
 .kicker{
@@ -65,197 +58,78 @@ h2{ font-size:clamp(30px, 3.8vw, 46px); line-height:1.12; letter-spacing:-.5px; 
 h2 .g{ color:var(--wine); }
 h3{ font-size:22px; line-height:1.2; margin-bottom:10px; }
 .lead{ font-size:17px; line-height:1.65; color:var(--ink); max-width:78ch; }
-.lead b{ color:var(--wine); font-weight:600; }
 .rule{ width:88px; height:2px; background:var(--wine); margin:24px 0 30px; }
 
-/* Обложка */
-.cover{ padding:100px 0 90px; }
+.cover{ padding:80px 0 60px; }
 .cover-meta{
   display:flex; justify-content:space-between; align-items:baseline; gap:24px;
   font-size:12px; font-weight:600; letter-spacing:3px; text-transform:uppercase;
   color:var(--wine); padding-bottom:16px; border-bottom:1px solid var(--line);
-  margin-bottom:70px; flex-wrap:wrap;
+  margin-bottom:44px; flex-wrap:wrap;
 }
-.cover .sub{ font-size:20px; line-height:1.5; color:var(--ink); max-width:38ch; margin-top:28px; }
-.cover .tag{
-  display:inline-block; margin-top:26px;
-  border:1px solid var(--wine); color:var(--wine);
-  font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
-  padding:10px 18px;
+.plan-list{ counter-reset: item; margin:20px 0 0; padding:0; list-style:none; }
+.plan-list li{
+  counter-increment: item;
+  position:relative;
+  padding:14px 0 14px 46px;
+  border-bottom:1px solid var(--line);
+  font-size:16px; line-height:1.5; color:var(--ink);
 }
-.cover .who{ font-size:14px; line-height:1.7; color:var(--ink); margin-top:26px; }
-.cover .who b{ color:var(--wine); }
+.plan-list li::before{
+  content: counter(item);
+  position:absolute; left:0; top:14px;
+  width:30px; height:30px; border-radius:50%;
+  background:var(--wine); color:var(--cream);
+  font-family:var(--display); font-size:16px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+}
+.plan-list li b{ color:var(--wine); font-weight:600; }
 
-/* Сетки */
 .grid{ display:grid; gap:24px; align-items:start; }
 .g2{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 .g3{ grid-template-columns:repeat(3, minmax(0,1fr)); }
-.g5{ grid-template-columns:repeat(5, minmax(0,1fr)); }
-@media (max-width:1000px){ .g3,.g5{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
-@media (max-width:640px){ .g2,.g3,.g5{ grid-template-columns:minmax(0,1fr); } }
+@media (max-width:900px){ .g3{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width:640px){ .g2,.g3{ grid-template-columns:minmax(0,1fr); } }
 
-/* Карточки */
 figure{ display:flex; flex-direction:column; gap:10px; }
 .shot{ background:#fff; border:1px solid var(--line); padding:10px; border-radius:4px; }
-.cap-t{ font-family:var(--display); font-size:18px; line-height:1.2; color:var(--ink); }
-.cap-s{ font-size:13px; color:var(--wine); }
+.shot-plain{ padding:0; border:none; background:transparent; }
+.cap-t{ font-family:var(--display); font-size:20px; line-height:1.25; color:var(--ink); }
+.cap-s{ font-size:14px; color:var(--wine); }
+.cap-num{
+  display:inline-block; width:26px; height:26px; border-radius:50%;
+  background:var(--wine); color:var(--cream);
+  font-family:var(--display); font-size:14px; font-weight:600;
+  text-align:center; line-height:26px; margin-right:8px;
+}
 
-/* Инфо-блок */
-.strip{
-  background:#fff; border:1px solid var(--line); border-left:4px solid var(--wine);
-  padding:20px 24px; font-size:15px; line-height:1.65; color:var(--ink);
-  margin-top:20px; border-radius:4px;
+.placeholder{
+  background:#fff; border:2px dashed rgba(90,33,71,.35);
+  border-radius:6px; padding:60px 30px; text-align:center;
+  color:var(--wine); font-family:var(--display); font-size:22px; line-height:1.4;
+  min-height:280px; display:flex; align-items:center; justify-content:center;
 }
-.strip b{ color:var(--wine); font-weight:600; }
-.strip ul{ margin:6px 0 0; padding-left:20px; }
-.strip li{ margin:4px 0; }
 
-/* Фиксированные пункты (спокойные) */
-.fixed-block{
-  background:rgba(8,122,104,.08);
-  border:1px solid rgba(8,122,104,.28);
-  border-left:4px solid var(--olive);
-  padding:22px 26px; border-radius:6px;
-  margin-top:20px;
-}
-.fixed-block .label{
-  color:var(--olive); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; font-size:11px;
-  margin-bottom:10px;
-}
-.fixed-block ul{ margin:0; padding-left:20px; font-size:15px; line-height:1.7; }
-.fixed-block li b{ color:var(--ink); }
-
-/* Красные блоки — для обсуждения */
-.discuss-block{
-  background:rgba(197,58,58,.10);
-  border:1px solid rgba(197,58,58,.32);
-  border-left:4px solid #C53A3A;
-  padding:22px 26px; border-radius:6px;
-  margin-top:20px;
-}
-.discuss-block .label{
-  color:#C53A3A; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; font-size:11px;
-  margin-bottom:10px;
-}
-.discuss-block h3{ color:#8A2020; margin-bottom:8px; font-size:20px; }
-.discuss-block p{ font-size:15px; line-height:1.65; }
-.discuss-block ul{ margin:8px 0 0; padding-left:20px; font-size:15px; line-height:1.7; }
-.discuss-block li b{ color:#8A2020; }
-
-/* SKU карточки */
-.sku-card{
-  background:#fff; border:1px solid var(--line); border-radius:4px; overflow:hidden;
-}
-.sku-card .sku-img{ padding:8px; background:#fff; }
-.sku-card .sku-name{
-  padding:10px 12px 14px; border-top:1px solid var(--line);
-  font-size:13px; line-height:1.35; color:var(--ink);
-}
-.sku-card .sku-name b{ display:block; font-family:var(--display); font-size:16px; color:var(--wine); margin-bottom:2px; }
-
-/* Финал */
 .finale{ padding:70px 0 90px; border-top:1px solid var(--line); text-align:center; }
-.finale .slogan{ font-family:var(--display); font-style:italic; font-size:36px; color:var(--wine); }
-.finale .sign{ font-size:14px; color:var(--wine); margin-top:12px; letter-spacing:1.5px; text-transform:uppercase; }
-
-/* Подвал */
-.foot{
-  border-top:1px solid var(--line); padding:30px 0 40px;
-  display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
-  font-size:13px; color:var(--wine);
-}
-
-/* Анкета */
-.anketa-block{
-  background:#fff;
-  border:1px solid var(--line);
-  border-left:4px solid var(--wine);
-  border-radius:6px;
-  padding:22px 26px;
-  margin-top:20px;
-}
-.anketa-block .q-num{
-  color:var(--wine); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; font-size:11px;
-  margin-bottom:6px;
-}
-.anketa-block h3{ font-size:19px; margin-bottom:10px; color:var(--ink); }
-.anketa-block .options{ margin:8px 0 0; padding-left:0; list-style:none; }
-.anketa-block .options li{
-  display:flex; align-items:flex-start; gap:10px;
-  padding:6px 0; font-size:15px; line-height:1.5; color:var(--ink);
-}
-.anketa-block .box{
-  display:inline-block; width:16px; height:16px; border:1.5px solid var(--wine);
-  border-radius:3px; flex-shrink:0; margin-top:2px;
-}
-.anketa-block .fill{
-  display:inline-block; border-bottom:1px dotted var(--wine); min-width:140px;
-  margin-left:6px; color:var(--wine);
-}
-.anketa-block .sub-q{ font-size:14px; color:var(--wine); margin-top:4px; }
-
-/* Print (A4 landscape) — каждая смысловая секция целостно на своей странице */
-@page{ size: A4 landscape; margin: 10mm; }
-@media print{
-  html, body{ background:var(--cream) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .topbar{ display:none; }
-  .wrap{ max-width:none; padding:0 8mm; }
-  /* Каждая секция целостно — с новой страницы */
-  .section{ padding:16px 0; border-top:none; page-break-before:always; break-before:page; }
-  .cover{ padding:16px 0; page-break-before:auto; break-before:auto; page-break-after:always; break-after:page; }
-  .cover-meta{ margin-bottom:30px; }
-  .finale{ padding:16px 0; border-top:none; page-break-before:always; break-before:page; }
-  footer{ display:none; }
-  /* Внутри «Наш поиск» — каждый подраздел (h3+грид) с новой страницы */
-  #search .grid + h3{ page-break-before:always; break-before:page; margin-top:0; }
-  /* Атомы не рвутся */
-  .fixed-block, .discuss-block, .strip, figure, .sku-card, .grid > *{
-    page-break-inside:avoid; break-inside:avoid; -webkit-column-break-inside:avoid;
-  }
-  h1, h2, h3{ page-break-after:avoid; break-after:avoid; }
-  .lead, .rule, .kicker{ page-break-after:avoid; break-after:avoid; }
-  /* Гриды в печати */
-  .g2{ grid-template-columns:repeat(2, minmax(0,1fr)); }
-  .g3{ grid-template-columns:repeat(3, minmax(0,1fr)); }
-  .g5{ grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px; }
-  img{ image-rendering: -webkit-optimize-contrast; }
-  /* Компактно, чтобы одна секция входила на 1 страницу landscape */
-  h1{ font-size:48px; }
-  h2{ font-size:30px; margin-bottom:8px; }
-  h3{ font-size:17px; margin-bottom:6px; }
-  .lead{ font-size:13px; line-height:1.55; }
-  .cover .sub{ font-size:15px; margin-top:16px; }
-  .cover .who{ font-size:13px; margin-top:18px; }
-  .cover .tag{ margin-top:18px; padding:8px 14px; font-size:11px; }
-  .kicker{ font-size:10px; margin-bottom:8px; }
-  .rule{ margin:10px 0 14px; }
-  .fixed-block, .discuss-block{ padding:14px 16px; font-size:12px; }
-  .fixed-block ul, .discuss-block ul{ font-size:12px; line-height:1.5; }
-  .discuss-block h3{ font-size:15px; margin-bottom:4px; }
-  .discuss-block p{ font-size:12px; line-height:1.5; }
-  .strip{ padding:12px 14px; font-size:12px; margin-top:12px; }
-  .sku-card .sku-name{ padding:6px 8px 8px; font-size:11px; line-height:1.25; }
-  .sku-card .sku-name b{ font-size:12px; margin-bottom:1px; }
-  .cover .sub, .cover .tag, .cover .who{ page-break-inside:avoid; }
-}
+.finale .slogan{ font-family:var(--display); font-style:italic; font-size:44px; color:var(--wine); }
+.finale .sign{ font-size:14px; color:var(--wine); margin-top:14px; letter-spacing:1.5px; text-transform:uppercase; }
 </style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap">
-    <div class="brand">Коврижка Зарайская · рабочая встреча</div>
+    <div class="brand">Коврижка Зарайская · рабочая встреча 22.09.2026</div>
     <nav>
-      <a href="#fixed">Зафиксировано</a>
-      <a href="#skus">Линейка вкусов</a>
+      <a href="#logo">Логотип</a>
       <a href="#palette">Палитра</a>
-      <a href="#logo-arka">Арка · знак</a>
-      <a href="#anketa">Анкета</a>
+      <a href="#etiketka">Этикетка</a>
+      <a href="#ornaments">Орнаменты</a>
     </nav>
   </div>
 </header>
 
-<!-- ===================== ОБЛОЖКА ===================== -->
+<!-- ===================== ОБЛОЖКА · ПЛАН ВСТРЕЧИ ===================== -->
 <section class="cover">
   <div class="wrap">
     <div class="cover-meta">
@@ -263,208 +137,70 @@ figure{ display:flex; flex-direction:column; gap:10px; }
       <span>22 сентября 2026 · рабочая встреча</span>
     </div>
 
-    <figure style="margin-bottom:36px;">
-      <div class="shot" style="padding:0;border:none;background:transparent;"><img src="concept-04-hero.png" alt="Концепция 04 · традиции в новом вкусе · брендборд"></div>
-    </figure>
-
-    <div>
-      <div class="kicker">Концепция 04 · традиции в новом вкусе</div>
-      <h1>Куда пришли · <span style="color:var(--wine);">что предстоит</span></h1>
-      <div class="rule"></div>
-      <div class="sub">
-        Промежуточная сверка перед следующим кругом. Что зафиксировано, что предстоит уточнить, какие есть открытые пункты для совместного обсуждения.
-      </div>
-      <div class="tag">10 SKU · 85 × 43 мм · полипропилен · «Повод для встречи»</div>
-      <div class="who">
-        <b>Заказчик:</b> ИП Спиридонова Г. Н. · производство Коврижки Зарайской<br>
-        <b>Дизайн:</b> Наталья Кротова × Мария Бурцева · Екатерина Николаева<br>
-        <b>Дедлайн этапа:</b> 30.10.2026
-      </div>
-    </div>
+    <div class="kicker">Концепция 04 · традиции в новом вкусе</div>
+    <h1>Коврижка Зарайская</h1>
+    <div class="rule"></div>
+    <div class="lead" style="color:var(--wine);font-style:italic;font-size:22px;">Повод для встречи</div>
   </div>
 </section>
 
-<!-- ===================== ЗАФИКСИРОВАНО ===================== -->
-<section class="section" id="fixed">
+<!-- ===================== 1 · ЛОГОТИП ===================== -->
+<section class="section" id="logo">
   <div class="wrap">
-    <div class="kicker">Что уже зафиксировано</div>
-    <h2>Общая система · <span class="g">то, из чего исходим</span></h2>
-    <div class="lead">
-      Ниже — договорённости, на которых строится вся дальнейшая работа. Всё, что предлагается на следующих страницах, опирается на эти пункты.
-    </div>
+    <div class="kicker">Пункт 01 · Логотип</div>
+    <h2>Конструкция знака · <span class="g">название и шрифт</span></h2>
     <div class="rule"></div>
 
-    <div class="fixed-block">
-      <div class="label">Зафиксировано по вашим комментариям</div>
-      <ul>
-        <li><b>Выбранное направление:</b> концепция №4 «кафтан» — арка-полукруг, лаконичный, минималистичный, цельный знак.</li>
-        <li><b>Что НЕ берём (из концепции №9):</b> колос, звёздочка и другие очевидные декоративные символы внутри знака.</li>
-        <li><b>Знак:</b> идея арки. Тоньше, лаконичнее, небанальнее. Без натуралистичных колосьев, веточек и перегруженной символики.</li>
-        <li><b>Порядок работ:</b> сначала утверждаем логотип отдельно, потом внедряем его в этикетку и остальное.</li>
-        <li><b>Слоган для всей линейки:</b> «Повод для встречи». Не заменяется на «Традиции со вкусом», «Встреча со вкусом» и т. п. — единый на всех этикетках.</li>
-        <li><b>Главный носитель:</b> этикетка на существующий прозрачный пакет коврижки. Закрытых коробок и конвертиков не делаем.</li>
-        <li><b>Размер этикетки:</b> сохраняем (85 × 43 мм по бланкам). Максимум чуть шире, но не желательно.</li>
-        <li><b>Упаковка = прозрачный пакет.</b> Обязательна. Причины: мёд + масло в составе (пакет требуется), разные посыпки сверху (продукт должен быть виден на полке).</li>
-        <li><b>Ценовой сегмент:</b> эконом. Без «посолиднее»-вариантов и дополнительных конвертиков — на это не тратим время.</li>
-        <li><b>Составы вкусов:</b> вся исходная информация — <a href="https://disk.yandex.ru/d/W5-1HUWNGU3wgQ" style="color:var(--wine);">disk.yandex.ru/d/W5-1HUWNGU3wgQ</a></li>
-        <li><b>Стиль:</b> современный, графичный, чистый. Не «эко-крафт», не винтажная лавка, не декоративно-народный стиль.</li>
-        <li><b>Цветовая система:</b> у каждого вкуса — своя яркая пара из двух гармонирующих цветов. Не только пастель. Насыщенные оттенки, которые вы присылали.</li>
-        <li><b>Орнамент:</b> у каждого вкуса — свой небольшой графичный (тонкая полоса, декор-мотив). Без реалистичных иллюстраций вишни, орехов, веточек, апельсинов и т. д.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== SKUs ===================== -->
-<section class="section" id="skus">
-  <div class="wrap">
-    <div class="kicker">Действующая линейка вкусов · 10 позиций</div>
-    <h2>SKU из бланков <span class="g">от заказчика</span></h2>
-    <div class="lead">
-      Все позиции, найденные в присланных бланках согласования. Ниже приведён исходный вид этикеток — как визуальный референс по содержанию (составы, названия, обязательная информация), а не по дизайну.
-    </div>
-    <div class="rule"></div>
-
-    <div class="grid g5" style="margin-top:20px;">
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_001_Spiridonova_85x43_kovrigka_kupech.jpg" alt="Купеческая"></div><div class="sku-name"><b>Честное слово</b>Купеческая с орехами</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_004_Spiridonova_85x43_kovrigka_tradicionnaya.jpg" alt="Традиционная"></div><div class="sku-name"><b>Грешкин кафтан</b>Традиционная</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_005_Spiridonova_85x43_kovrigka_brazil_oreh.jpg" alt="Кофейная с бразильским орехом"></div><div class="sku-name"><b>Донна Роза</b>Кофейная с бразильским орехом</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_006_Spiridonova_85x43_kovrigka_apelsin.jpg" alt="Апельсиновая"></div><div class="sku-name"><b>От корки до корки</b>Апельсиновая</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_007_Spiridonova_85x43_kovrigka_Fedya.jpg" alt="Федина радость"></div><div class="sku-name"><b>Федина радость</b>Особая серия</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_008_Spiridonova_85x43_kovrigka_uchenicheskaya.jpg" alt="Ученическая"></div><div class="sku-name"><b>Кнут и пряник</b>Ученическая с перцем и изюмом</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_009_Spiridonova_85x43_kovrigka_choko.jpg" alt="Шоколадная"></div><div class="sku-name"><b>Сила Монтесумы</b>Шоколадная</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_010_Spiridonova_85x43_kovrigka_vostochnaya.jpg" alt="Восточная"></div><div class="sku-name"><b>Дело тонкое</b>Восточная с кофе и имбирём</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_014_Spiridonova_85x43_parshivka_ogorodnaya.jpg" alt="Паршивка огородная"></div><div class="sku-name"><b>Паршивка огородная</b>Тыквенная с куркумой и семечками</div></figure>
-      <figure class="sku-card"><div class="sku-img"><img src="blanks_Spiridonova/blank_768_015_Spiridonova_85x43_kovrigka_kosmos.jpg" alt="Космическая"></div><div class="sku-name"><b>«Заря, я Кедр»</b>Космическая</div></figure>
-    </div>
-
-    <div class="strip">
-      <b>Что забираем со старых этикеток:</b> официальное название вкуса, состав, масса, пищевая ценность, реквизиты производителя, нормативную информацию. <b>Что не переносим:</b> декоративные рамки, ярмарочную типографику, иллюстративные ингредиенты, разрозненные стили.
+    <div style="max-width:600px; margin:0 auto;">
+      <figure>
+        <div class="shot"><img src="logo-final.png" alt="Логотип Коврижка Зарайская · повод для встречи"></div>
+        <div style="text-align:center;margin-top:12px;font-size:14px;color:var(--wine);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;">«Повод для встречи» · слоган утверждённый</div>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ===================== ПАЛИТРА ===================== -->
+<!-- ===================== ПАЛИТРА · 3 ВАРИАНТА ===================== -->
 <section class="section" id="palette">
   <div class="wrap">
-    <div class="kicker">Цветовая система линейки</div>
-    <h2>Палитра · <span class="g">10 SKU-пар из общей мастер-палитры</span></h2>
-    <div class="lead">
-      Рабочая версия палитры: одна мастер-палитра из 10 базовых цветов и 10 пар — по одной на каждый вкус. Одни и те же цвета встречаются в разных парах — это удерживает линейку как единую серию, при этом каждая пара уникальна и каждый вкус узнаваем на полке.
-    </div>
+    <div class="kicker">Цветовая палитра</div>
+    <h2>Три варианта · <span class="g">ясная · глубокая · смелая</span></h2>
     <div class="rule"></div>
 
-    <div class="grid g2" style="margin-top:20px;">
-      <figure>
-        <div class="shot"><img src="palettes/kovrizhka-palettes-v1.png" alt="Палитра линейки · вариант 1"></div>
-        <div class="cap-s" style="margin-top:8px;">Вариант 01 · базовые пары, более мягкие сочетания.</div>
-      </figure>
-      <figure>
-        <div class="shot"><img src="palettes/kovrizhka-palettes-v2.png" alt="Палитра линейки · вариант 2"></div>
-        <div class="cap-s" style="margin-top:8px;">Вариант 02 · смелые контрастные сочетания, ближе к вашему запросу «ярче, не пастель».</div>
-      </figure>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== АРКА + ПУГОВИЦА ===================== -->
-<section class="section" id="logo-arka">
-  <div class="wrap">
-    <div class="kicker">Знак</div>
-    <h2>Арка + пуговица · <span class="g">3 варианта</span></h2>
-    <div class="rule"></div>
     <figure>
-      <div class="shot"><img src="logo-arka-pugovitsa-3.png" alt="Арка + пуговица · 3 варианта"></div>
+      <div class="shot"><img src="palettes-3-variants.png" alt="Палитра · 3 варианта: ясная, глубокая, смелая"></div>
     </figure>
   </div>
 </section>
 
-<!-- ===================== АНКЕТА ===================== -->
-<section class="section" id="anketa">
+<!-- ===================== ЭТИКЕТКА ===================== -->
+<section class="section" id="etiketka">
   <div class="wrap">
-    <div class="kicker">Анкета · 7 вопросов</div>
-    <h2>Просим отметить</h2>
+    <div class="kicker">Этикетка</div>
+    <h2>Основа · <span class="g">традиционная без изысков · 04</span></h2>
     <div class="rule"></div>
 
-    <div class="anketa-block">
-      <div class="q-num">01 · знак</div>
-      <h3>Какая арка ближе?</h3>
-      <ul class="options">
-        <li><span class="box"></span>архитектурная</li>
-        <li><span class="box"></span>геральдическая</li>
-        <li><span class="box"></span>буквенная</li>
-        <li><span class="box"></span>полукруг из концепции № 4 «кафтан»</li>
-        <li><span class="box"></span>мой референс: <span class="fill"></span></li>
-      </ul>
-    </div>
+    <figure>
+      <div class="shot"><img src="etiketka-tradicionnaya-04.png" alt="Этикетка · Традиционная без изысков"></div>
+    </figure>
+  </div>
+</section>
 
-    <div class="anketa-block">
-      <div class="q-num">02 · характер знака</div>
-      <h3>«Тоньше, лаконичнее» — по сравнению с чем?</h3>
-      <ul class="options">
-        <li><span class="box"></span>1–2 варианта, которые <b>уже тонкие</b></li>
-        <li><span class="box"></span>1–2 варианта, которые <b>всё ещё перегружены</b></li>
-      </ul>
-    </div>
+<!-- ===================== ОРНАМЕНТЫ ===================== -->
+<section class="section" id="ornaments">
+  <div class="wrap">
+    <div class="kicker">Орнаменты</div>
+    <h2>Полосы · <span class="g">10 вариантов</span></h2>
+    <div class="rule"></div>
 
-    <div class="anketa-block">
-      <div class="q-num">03 · мастер-SKU</div>
-      <h3>На каком вкусе собираем первый макет?</h3>
-      <ul class="options">
-        <li><span class="box"></span>Купеческая · «Честное слово»</li>
-        <li><span class="box"></span>Донна Роза</li>
-        <li><span class="box"></span>Шоколадная · «Сила Монтесумы»</li>
-        <li><span class="box"></span>Восточная · «Дело тонкое»</li>
-        <li><span class="box"></span>Космическая · «Заря, я Кедр»</li>
-        <li><span class="box"></span>доверим вам</li>
-      </ul>
-    </div>
-
-    <div class="anketa-block">
-      <div class="q-num">04 · цветовая пара</div>
-      <h3>Какая пара для мастер-SKU?</h3>
-      <ul class="options">
-        <li><span class="box"></span>номер пары в палитре: <span class="fill"></span></li>
-        <li><span class="box"></span>своя пара: <span class="fill" style="min-width:220px;"></span></li>
-        <li><span class="box"></span>доверим вам</li>
-      </ul>
-    </div>
-
-    <div class="anketa-block">
-      <div class="q-num">05 · орнамент</div>
-      <h3>Насколько абстрактно?</h3>
-      <ul class="options">
-        <li><span class="box"></span>совсем абстрактно — геометрия</li>
-        <li><span class="box"></span>лёгкий намёк на вкус, стилизованный</li>
-        <li><span class="box"></span>мой референс: <span class="fill"></span></li>
-      </ul>
-    </div>
-
-    <div class="anketa-block">
-      <div class="q-num">06 · название вкуса</div>
-      <h3>Что на первом плане?</h3>
-      <ul class="options">
-        <li><span class="box"></span><b>Название вкуса</b> крупно</li>
-        <li><span class="box"></span><b>Бренд</b> крупно</li>
-      </ul>
-    </div>
-
-    <div class="anketa-block">
-      <div class="q-num">07 · слоган</div>
-      <h3>Где «Повод для встречи»?</h3>
-      <ul class="options">
-        <li><span class="box"></span>под названием вкуса</li>
-        <li><span class="box"></span>в нижней полосе</li>
-        <li><span class="box"></span>на боку / диагональ</li>
-        <li><span class="box"></span>доверим вам</li>
-      </ul>
+    <div style="max-width:700px; margin:0 auto;">
+      <figure>
+        <div class="shot"><img src="ornaments-10.png" alt="Орнаменты · 10 вариантов полос"></div>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ===================== ФИНАЛ ===================== -->
 <section class="finale">
   <div class="wrap">
     <div class="slogan">Повод для встречи</div>
@@ -472,13 +208,5 @@ figure{ display:flex; flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<footer class="wrap">
-  <div class="foot">
-    <div>Коврижка Зарайская · рабочая встреча 22.09.2026</div>
-    <div>Внутренний документ команды</div>
-  </div>
-</footer>
-
 </body>
 </html>
-
