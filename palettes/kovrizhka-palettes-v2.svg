@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2300" viewBox="0 0 1600 2300">
+  <rect width="1600" height="2300" fill="#F5F0E7"/>
+  <style>
+    .sans{font-family:Arial,Helvetica,sans-serif}.serif{font-family:Georgia,'Times New Roman',serif}
+    .title{font-size:54px;font-weight:700;fill:#172A3A;letter-spacing:2px}
+    .sub{font-size:24px;fill:#6A6158;letter-spacing:2px}
+    .name{font-size:30px;font-weight:700;fill:#172A3A}.kind{font-size:20px;fill:#74695F}
+    .hex{font-size:20px;font-weight:700}.num{font-size:18px;fill:#8D8277;letter-spacing:2px}
+  </style>
+
+  <text x="100" y="105" class="sans title">КОВРИЖКА ЗАРАЙСКАЯ</text>
+  <text x="100" y="150" class="sans sub">ПАЛИТРА ЛИНЕЙКИ · ВАРИАНТ 02</text>
+  <text x="100" y="194" class="sans sub" style="font-size:19px;letter-spacing:1px">СМЕЛЫЕ КОНТРАСТНЫЕ СОЧЕТАНИЯ · СОВРЕМЕННЕЕ И ЯРЧЕ ПЕРВОГО ВАРИАНТА</text>
+
+  <!-- master palette -->
+  <g transform="translate(100 250)">
+    <text x="0" y="0" class="sans num">МАСТЕР-ПАЛИТРА</text>
+    <g transform="translate(0 30)">
+      <rect x="0" y="0" width="140" height="95" rx="12" fill="#2456A6"/><text x="70" y="125" text-anchor="middle" class="sans hex" fill="#2456A6">#2456A6</text>
+      <rect x="145" y="0" width="140" height="95" rx="12" fill="#E05A5A"/><text x="215" y="125" text-anchor="middle" class="sans hex" fill="#E05A5A">#E05A5A</text>
+      <rect x="290" y="0" width="140" height="95" rx="12" fill="#C45F2D"/><text x="360" y="125" text-anchor="middle" class="sans hex" fill="#C45F2D">#C45F2D</text>
+      <rect x="435" y="0" width="140" height="95" rx="12" fill="#B7C83E"/><text x="505" y="125" text-anchor="middle" class="sans hex" fill="#9E682C">#B7C83E</text>
+      <rect x="580" y="0" width="140" height="95" rx="12" fill="#F2B43A"/><text x="650" y="125" text-anchor="middle" class="sans hex" fill="#8D6A39">#F2B43A</text>
+      <rect x="725" y="0" width="140" height="95" rx="12" fill="#F3E8D4"/><text x="795" y="125" text-anchor="middle" class="sans hex" fill="#8A765D">#F3E8D4</text>
+      <rect x="870" y="0" width="140" height="95" rx="12" fill="#0B7A68"/><text x="940" y="125" text-anchor="middle" class="sans hex" fill="#0B7A68">#0B7A68</text>
+      <rect x="1015" y="0" width="140" height="95" rx="12" fill="#5A2147"/><text x="1085" y="125" text-anchor="middle" class="sans hex" fill="#5A2147">#5A2147</text>
+      <rect x="1160" y="0" width="140" height="95" rx="12" fill="#8A2E62"/><text x="1230" y="125" text-anchor="middle" class="sans hex" fill="#8A2E62">#8A2E62</text>
+      <rect x="1305" y="0" width="95" height="95" rx="12" fill="#172A3A"/><text x="1352" y="125" text-anchor="middle" class="sans hex" fill="#172A3A">#172A3A</text>
+    </g>
+  </g>
+
+  <!-- row 1 -->
+  <g transform="translate(100 485)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">01</text><text x="30" y="82" class="sans name">ЧЕСТНОЕ СЛОВО</text><text x="30" y="112" class="sans kind">Купеческая с орехами</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#2456A6"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#F3E8D4"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#2456A6</text><text x="470" y="235" class="sans hex" fill="#2456A6">#F3E8D4</text>
+  </g>
+  <g transform="translate(820 485)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">02</text><text x="30" y="82" class="sans name">ГРЕШКИН КАФТАН</text><text x="30" y="112" class="sans kind">Традиционная</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#F3E8D4"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#0B7A68"/>
+    <text x="50" y="235" class="sans hex" fill="#0B7A68">#F3E8D4</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#0B7A68</text>
+  </g>
+
+  <!-- row 2 -->
+  <g transform="translate(100 805)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">03</text><text x="30" y="82" class="sans name">ДОННА РОЗА</text><text x="30" y="112" class="sans kind">Кофейная</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#E05A5A"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#5A2147"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#E05A5A</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#5A2147</text>
+  </g>
+  <g transform="translate(820 805)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">04</text><text x="30" y="82" class="sans name">ОТ КОРКИ ДО КОРКИ</text><text x="30" y="112" class="sans kind">Апельсиновая</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#B7C83E"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#8A2E62"/>
+    <text x="50" y="235" class="sans hex" fill="#172A3A">#B7C83E</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#8A2E62</text>
+  </g>
+
+  <!-- row 3 -->
+  <g transform="translate(100 1125)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">05</text><text x="30" y="82" class="sans name">ФЕДИНА РАДОСТЬ</text><text x="30" y="112" class="sans kind">Особая серия</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#F2B43A"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#8A2E62"/>
+    <text x="50" y="235" class="sans hex" fill="#172A3A">#F2B43A</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#8A2E62</text>
+  </g>
+  <g transform="translate(820 1125)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">06</text><text x="30" y="82" class="sans name">КНУТ И ПРЯНИК</text><text x="30" y="112" class="sans kind">Ученическая</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#5A2147"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#B7C83E"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#5A2147</text><text x="470" y="235" class="sans hex" fill="#172A3A">#B7C83E</text>
+  </g>
+
+  <!-- row 4 -->
+  <g transform="translate(100 1445)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">07</text><text x="30" y="82" class="sans name">СИЛА МОНТЕСУМЫ</text><text x="30" y="112" class="sans kind">Шоколадная</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#172A3A"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#8A2E62"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#172A3A</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#8A2E62</text>
+  </g>
+  <g transform="translate(820 1445)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">08</text><text x="30" y="82" class="sans name">DELO TONKOE</text><text x="30" y="112" class="sans kind">Восточная</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#C45F2D"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#2456A6"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#C45F2D</text><text x="470" y="235" class="sans hex" fill="#F3E8D4">#2456A6</text>
+  </g>
+
+  <!-- row 5 -->
+  <g transform="translate(100 1765)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">09</text><text x="30" y="82" class="sans name">ПАРШИВКА ОГОРОДНАЯ</text><text x="30" y="112" class="sans kind">Тыквенная</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#0B7A68"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#B7C83E"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#0B7A68</text><text x="470" y="235" class="sans hex" fill="#172A3A">#B7C83E</text>
+  </g>
+  <g transform="translate(820 1765)">
+    <rect width="680" height="285" rx="24" fill="#FFFDFC" stroke="#DED5C8"/>
+    <text x="30" y="42" class="sans num">10</text><text x="30" y="82" class="sans name">«ЗАРЯ, Я КЕДР»</text><text x="30" y="112" class="sans kind">Космическая</text>
+    <rect x="30" y="145" width="310" height="105" rx="16" fill="#8A2E62"/><rect x="340" y="145" width="310" height="105" rx="16" fill="#F2B43A"/>
+    <text x="50" y="235" class="sans hex" fill="#F3E8D4">#8A2E62</text><text x="470" y="235" class="sans hex" fill="#172A3A">#F2B43A</text>
+  </g>
+
+  <line x1="100" y1="2130" x2="1500" y2="2130" stroke="#CFC4B5"/>
+  <text x="100" y="2185" class="sans sub" style="font-size:18px;letter-spacing:1px">ПРИНЦИП: ОБЩИЕ ЦВЕТА ПОВТОРЯЮТСЯ В РАЗНЫХ ПАРАХ — ЛИНЕЙКА ОСТАЁТСЯ ЦЕЛЬНОЙ</text>
+  <text x="100" y="2225" class="sans sub" style="font-size:18px;letter-spacing:1px">СЛЕДУЮЩИЙ ЭТАП: ВЫБРАТЬ 3–4 СИЛЬНЫЕ ПАРЫ И ПРОВЕРИТЬ ИХ НА ЭТИКЕТКЕ 85 × 43 ММ</text>
+</svg>
